@@ -1,1 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareMarket | Find Your Health Insurance Plan</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
 
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="shield-check" class="text-teal-600 w-8 h-8"></i>
+                    <span class="text-xl font-bold text-slate-900 tracking-tight">Care<span class="text-teal-600">Market</span></span>
+                </div>
+                <div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
+                    <a href="#" class="text-teal-600 border-b-2 border-teal-600 px-1 py-5">Find Plans</a>
+                    <a href="#" class="hover:text-slate-900 transition">How it Works</a>
+                    <a href="#" class="hover:text-slate-900 transition">Providers</a>
+                    <a href="#" class="hover:text-slate-900 transition">Support</a>
+                </div>
+                <div>
+                    <button class="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-lg font-medium text-sm transition shadow-sm">
+                        Sign In
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <div class="lg:col-span-7 space-y-4 text-center lg:text-left">
+                    <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight">
+                        Compare Plans from the Top 20 Insurers
+                    </h1>
+                    <p class="text-base md:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0">
+                        Find clear, transparent health coverage tailored to your budget. Easily filter by metal tiers, deductibles, and co-pays all in one marketplace.
+                    </p>
+                    <div class="pt-2 flex justify-center lg:justify-start gap-4 text-xs md:text-sm font-medium text-slate-300">
+                        <span class="flex items-center gap-1"><i data-lucide="check-circle" class="w-4 h-4 text-teal-400"></i> Transparent Copays</span>
+                        <span class="flex items-center gap-1"><i data-lucide="check-circle" class="w-4 h-4 text-teal-400"></i> Adjustable Deductibles</span>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 relative w-full max-w-md mx-auto lg:max-w-none">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-800 bg-slate-950/40 p-2">
+                        <img 
+                            src="http://googleusercontent.com/image_generation_content/0" 
+                            alt="CareMarket Marketplace Overview" 
+                            class="w-full h-auto rounded-xl object-cover transform hover:scale-[1.02] transition duration-300"
+                        />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            
+            <aside class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm h-fit space-y-6">
+                <div>
+                    <h2 class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                        <i data-lucide="sliders-horizontal" class="w-5 h-5 text-slate-500"></i> Filters
+                    </h2>
+                    <hr class="border-slate-100">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 mb-2">Insurance Provider</label>
+                    <select id="providerFilter" onchange="filterPlans()" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm bg-slate-50 focus:ring-2 focus:ring-teal-500 focus:outline-none">
+                        <option value="all">All Top 20 Companies</option>
+                        </select>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 mb-2">Plan Level (Metal Tier)</label>
+                    <div class="space-y-2">
+                        <label class="flex items-center gap-2 text-sm text-slate-600 cursor-pointer">
+                            <input type="radio" name="tier" value="all" checked onchange="filterPlans()" class="text-teal-600 focus:ring-teal-500"> All Tiers
+                        </label>
+                        <label class="flex items-center gap-2 text-sm text-slate-600 cursor-pointer">
+                            <input type="radio" name="tier" value="Bronze" onchange="filterPlans()" class="text-teal-600 focus:ring-teal-500"> Bronze (Lower premium, high deductible)
+                        </label>
+                        <label class="flex items-center gap-2 text-sm text-slate-600 cursor-pointer">
+                            <input type="radio" name="tier" value="Silver" onchange="filterPlans()" class="text-teal-600 focus:ring-teal-500"> Silver (Balanced costs)
+                        </label>
+                        <label class="flex items-center gap-2 text-sm text-slate-600 cursor-pointer">
+                            <input type="radio" name="tier" value="Gold" onchange="filterPlans()" class="text-teal-600 focus:ring-teal-500"> Gold (Higher premium, low deductible)
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 mb-2">Network Type</label>
+                    <select id="networkFilter" onchange="filterPlans()" class="w-full border border-slate-300 rounded-lg p-2.5 text-sm bg-slate-50 focus:ring-2 focus:ring-teal-500 focus:outline-none">
+                        <option value="all">All Networks</option>
+                        <option value="PPO">PPO (More flexibility)</option>
+                        <option value="HMO">HMO (Requires referrals)</option>
+                        <option value="EPO">EPO (No out-of-network)</option>
+                    </select>
+                </div>
+            </aside>
+
+            <section class="lg:col-span-3">
+                <div class="flex justify-between items-center mb-6">
+                    <p class="text-sm text-slate-500 font-medium"><span id="planCount" class="text-slate-900 font-bold">0</span> plans matching your criteria</p>
+                    <div class="text-sm text-slate-500">
+                        Sort by: <span class="font-semibold text-slate-800">Lowest Premium</span>
+                    </div>
+                </div>
+
+                <div id="plansGrid" class="space-y-4">
+                    </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-8 mt-16 border-t border-slate-800 text-center text-sm">
+        <p>&copy; 2026 CareMarket Marketplace. All mock plan options strictly for design layout verification.</p>
+    </footer>
+
+    <script>
+        // The Top 20 National and Regional Health Insurance Companies
+        const companies = [
+            "UnitedHealthcare", "Elevance Health (Anthem)", "Aetna (CVS Health)", "Cigna", "Humana", 
+            "Blue Cross Blue Shield (BCBS)", "Kaiser Permanente", "Centene Corporation", "Molina Healthcare", "Guidewell (Florida Blue)",
+            "Highmark", "Health Net", "Oscar Health", "Ambetter", "CareFirst", 
+            "Independence Blue Cross", "WellCare", "Horizon Blue Cross Blue Shield", "Medica", "SelectHealth"
+        ];
+
+        // Generator to spin up mock realistic health plans mapping out the top 20 providers
+        const planTiers = ["Bronze", "Silver", "Gold"];
+        const networks = ["PPO", "HMO", "EPO"];
+        
+        const plans = companies.flatMap((company, idx) => {
+            return planTiers.map((tier, tIdx) => {
+                let premium, deductible, copay, network;
+                
+                // Set data parameters realistically dependent on structural plan tiers
+                if(tier === "Bronze") {
+                    premium = 240 + (idx * 4);
+                    deductible = 7500;
+                    copay = 45;
+                } else if(tier === "Silver") {
+                    premium = 380 + (idx * 5);
+                    deductible = 3500;
+                    copay = 30;
+                } else {
+                    premium = 510 + (idx * 6);
+                    deductible = 1200;
+                    copay = 15;
+                }
+                network = networks[(idx + tIdx) % networks.length];
+
+                return {
+                    id: `${idx}-${tIdx}`,
+                    company: company,
+                    name: `${company} Essential ${tier} ${network}`,
+                    tier: tier,
+                    network: network,
+                    premium: premium,
+                    deductible: deductible,
+                    copay: copay,
+                    rating: (4 + ((idx % 10) / 10)).toFixed(1)
+                }
+            });
+        }).sort((a,b) => a.premium - b.premium); // Sort by lowest premium initially
+
+        // Initialize UI Elements
+        function initMarketplace() {
+            // Populate Company Selection Options
+            const providerSelect = document.getElementById('providerFilter');
+            companies.sort().forEach(company => {
+                const opt = document.createElement('option');
+                opt.value = company;
+                opt.textContent = company;
+                providerSelect.appendChild(opt);
+            });
+
+            // Trigger initial render
+            renderPlans(plans);
+            lucide.createIcons();
+        }
+
+        // Render card layout matrix dynamically
+        function renderPlans(plansToRender) {
+            const grid = document.getElementById('plansGrid');
+            document.getElementById('planCount').textContent = plansToRender.length;
+            
+            if(plansToRender.length === 0) {
+                grid.innerHTML = `
+                    <div class="bg-white rounded-2xl p-12 text-center border border-slate-200">
+                        <i data-lucide="alert-circle" class="w-12 h-12 text-slate-400 mx-auto mb-3"></i>
+                        <h3 class="text-lg font-bold text-slate-800">No plans found</h3>
+                        <p class="text-slate-500 text-sm mt-1">Try adjusting your filters or selecting a different insurance tier.</p>
+                    </div>`;
+                lucide.createIcons();
+                return;
+            }
+
+            grid.innerHTML = plansToRender.map(plan => `
+                <div class="bg-white border border-slate-200 rounded-2xl p-6 transition hover:shadow-md relative overflow-hidden flex flex-col md:flex-row justify-between gap-6 items-start md:items-center">
+                    
+                    <div class="absolute top-0 left-0 h-1.5 w-full ${
+                        plan.tier === 'Gold' ? 'bg-amber-500' : plan.tier === 'Silver' ? 'bg-slate-400' : 'bg-orange-600'
+                    }"></div>
+
+                    <div class="space-y-2 flex-1">
+                        <div class="flex items-center gap-2 flex-wrap">
+                            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold ${
+                                plan.tier === 'Gold' ? 'bg-amber-50 text-amber-800 border border-amber-200' : 
+                                plan.tier === 'Silver' ? 'bg-slate-100 text-slate-800 border border-slate-200' : 
+                                'bg-orange-50 text-orange-800 border border-orange-200'
+                            }">${plan.tier} Plan</span>
+                            <span class="bg-slate-100 border border-slate-200 text-slate-700 px-2.5 py-0.5 rounded-full text-xs font-semibold">${plan.network}</span>
+                            <span class="text-amber-500 flex items-center text-xs font-bold gap-0.5 ml-2">
+                                <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i> ${plan.rating}
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 tracking-tight">${plan.name}</h3>
+                        <p class="text-sm text-slate-500 flex items-center gap-1">
+                            <i data-lucide="building-2" class="w-4 h-4"></i> Offered by ${plan.company}
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-x-8 gap-y-2 bg-slate-50 p-4 rounded-xl border border-slate-100 w-full md:w-auto min-w-[240px]">
+                        <div>
+                            <p class="text-[11px] uppercase tracking-wider text-slate-400 font-bold">Deductible</p>
+                            <p class="text-base font-bold text-slate-800">$${plan.deductible.toLocaleString()}</p>
+                        </div>
+                        <div>
+                            <p class="text-[11px] uppercase tracking-wider text-slate-400 font-bold">Primary Care</p>
+                            <p class="text-base font-bold text-slate-800">$${plan.copay} <span class="text-xs text-slate-500 font-normal">Copay</span></p>
+                        </div>
+                        <div class="col-span-2 border-t border-slate-200/60 pt-2 mt-1">
+                            <p class="text-[11px] uppercase tracking-wider text-slate-400 font-bold">Drug Coverage</p>
+                            <p class="text-xs font-medium text-slate-600">Generic: $15 Copay</p>
+                        </div>
+                    </div>
+
+                    <div class="text-left md:text-right w-full md:w-auto flex md:flex-col justify-between md:justify-center items-center md:items-end gap-4 border-t md:border-t-0 border-slate-100 pt-4 md:pt-0">
+                        <div>
+                            <p class="text-3xl font-extrabold text-slate-900">$${plan.premium}<span class="text-sm text-slate-500 font-normal">/mo</span></p>
+                            <p class="text-xs text-slate-400 font-medium">Estimated Premium</p>
+                        </div>
