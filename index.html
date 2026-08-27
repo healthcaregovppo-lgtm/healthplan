@@ -1,65 +1,277 @@
-<!-- Footer with Healthcare Gallery & Legal Disclaimer -->
-    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 text-xs leading-relaxed">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthConsult | Asesoría en Seguros Médicos / Health Insurance Consultancy</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+    <!-- Navegación Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="bg-blue-600 text-white p-2 rounded-lg">
+                    <i data-lucide="shield-check" class="w-7 h-7"></i>
+                </div>
+                <span class="text-2xl font-bold text-slate-900 tracking-tight">Health<span class="text-blue-600">Consult</span></span>
+            </div>
             
-            <!-- Healthcare Team & Care Gallery -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-slate-600">
+                <a href="#inicio" class="hover:text-blue-600 transition" data-es="Inicio" data-en="Home">Inicio</a>
+                <a href="#aseguradoras" class="hover:text-blue-600 transition" data-es="Aseguradoras" data-en="Carriers">Aseguradoras</a>
+                <a href="#servicios" class="hover:text-blue-600 transition" data-es="Servicios" data-en="Services">Servicios</a>
+                <a href="#contacto" class="hover:text-blue-600 transition" data-es="Contacto" data-en="Contact">Contacto</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <!-- Selector de Idioma -->
+                <div class="flex items-center bg-slate-100 rounded-lg p-1 text-xs font-bold">
+                    <button id="btn-es" onclick="switchLanguage('es')" class="px-2.5 py-1 rounded-md bg-white text-blue-600 shadow-sm transition">ES</button>
+                    <button id="btn-en" onclick="switchLanguage('en')" class="px-2.5 py-1 rounded-md text-slate-500 hover:text-slate-900 transition">EN</button>
+                </div>
+
+                <a href="tel:18005550199" class="hidden sm:flex items-center gap-2 text-blue-700 font-semibold text-sm bg-blue-50 px-4 py-2.5 rounded-full border border-blue-100 hover:bg-blue-100 transition">
+                    <i data-lucide="phone" class="w-4 h-4"></i> (800) 555-0199
+                </a>
+                <a href="#contacto" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2.5 rounded-full shadow-md transition" data-es="Cotizar Gratis" data-en="Free Quote">
+                    Cotizar Gratis
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="bg-gradient-to-b from-blue-50 via-white to-slate-50 py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <div class="inline-flex items-center gap-2 bg-blue-100 text-blue-800 text-xs font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full">
+                    <i data-lucide="award" class="w-4 h-4"></i>
+                    <span data-es="Asesoría de Salud No. 1 en EE. UU." data-en="Top Rated Health Insurance Advisors in USA">Asesoría de Salud No. 1 en EE. UU.</span>
+                </div>
+                <h1 class="text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight">
+                    <span data-es="Encontramos el" data-en="We find the">Encontramos el</span>
+                    <span class="text-blue-600" data-es="mejor plan de salud" data-en="best health plan">mejor plan de salud</span>
+                    <span data-es="para ti y tu familia." data-en="for you and your family.">para ti y tu familia.</span>
+                </h1>
+                <p class="text-lg text-slate-600 leading-relaxed" data-es="Comparamos las principales aseguradoras médicas de Estados Unidos para garantizarte la máxima cobertura al menor costo posible. Sin costo adicional." data-en="We compare top health insurance carriers in the United States to guarantee maximum coverage at the lowest possible cost. 100% free of charge.">
+                    Comparamos las principales aseguradoras médicas de Estados Unidos para garantizarte la máxima cobertura al menor costo posible. Sin costo adicional.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                    <a href="#contacto" class="inline-flex justify-center items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition">
+                        <span data-es="Encontrar Mi Plan Ideal" data-en="Find My Ideal Plan">Encontrar Mi Plan Ideal</span>
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
+
+                <!-- Garantías de Confianza -->
+                <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-200">
+                    <div class="flex items-center gap-2 text-xs font-medium text-slate-600">
+                        <i data-lucide="check-circle-2" class="text-blue-600 w-5 h-5 flex-shrink-0"></i>
+                        <span data-es="100% Gratuito" data-en="100% Free">100% Gratuito</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs font-medium text-slate-600">
+                        <i data-lucide="check-circle-2" class="text-blue-600 w-5 h-5 flex-shrink-0"></i>
+                        <span data-es="Cobertura Nacional" data-en="Nationwide Coverage">Cobertura Nacional</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs font-medium text-slate-600">
+                        <i data-lucide="check-circle-2" class="text-blue-600 w-5 h-5 flex-shrink-0"></i>
+                        <span data-es="Soporte Bilingüe" data-en="Bilingual Support">Soporte Bilingüe</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Imagen Principal de Confianza -->
+            <div class="relative">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                    <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=800&q=80" alt="Doctora consultando paciente mayor" class="w-full h-[450px] object-cover">
+                </div>
+                <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl border border-slate-100 hidden sm:flex items-center gap-4">
+                    <div class="bg-blue-100 p-3 rounded-full text-blue-600">
+                        <i data-lucide="users" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <p class="text-2xl font-bold text-slate-900">+50,000</p>
+                        <p class="text-xs text-slate-500 font-medium" data-es="Familias Asesoradas" data-en="Families Helped">Familias Asesoradas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aseguradoras Aliadas -->
+    <section id="aseguradoras" class="py-12 bg-white border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-xs font-bold text-slate-400 uppercase tracking-widest mb-8" data-es="Trabajamos con las principales aseguradoras y redes de salud de EE. UU." data-en="We work with top health insurance carriers across the U.S.">
+                Trabajamos con las principales aseguradoras y redes de salud de EE. UU.
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 items-center justify-items-center opacity-70">
+                <span class="text-xl font-black text-slate-700">BlueCross</span>
+                <span class="text-xl font-black text-slate-700">UnitedHealth</span>
+                <span class="text-xl font-black text-slate-700">Aetna</span>
+                <span class="text-xl font-black text-slate-700">Cigna</span>
+                <span class="text-xl font-black text-slate-700">Humana</span>
+                <span class="text-xl font-black text-slate-700">Kaiser</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tarjetas de Coberturas / Imágenes -->
+    <section id="servicios" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-extrabold text-slate-900" data-es="Planes Médicos a tu Medida" data-en="Tailored Healthcare Plans">Planes Médicos a tu Medida</h2>
+                <p class="text-slate-600 mt-4 text-lg" data-es="Obtén la cobertura adecuada según tus necesidades médicas y presupuesto." data-en="Get the coverage you need built around your health and budget requirements.">Obtén la cobertura adecuada según tus necesidades médicas y presupuesto.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Medicare -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=600&q=80" alt="Adultos mayores felices" class="h-48 w-full object-cover">
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-2 text-blue-600 mb-2">
+                                <i data-lucide="heart-pulse" class="w-5 h-5"></i>
+                                <span class="font-bold text-sm">Medicare & Senior</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2" data-es="Medicare Advantage" data-en="Medicare Advantage">Medicare Advantage</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4" data-es="Cobertura completa para mayores de 65 años o personas elegibles. Incluye medicamentos y visión." data-en="Comprehensive coverage for seniors 65+ or qualified individuals. Includes Rx & vision.">
+                                Cobertura completa para mayores de 65 años o personas elegibles. Incluye medicamentos y visión.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dental y Vista -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=600&q=80" alt="Dentista trabajando con paciente" class="h-48 w-full object-cover">
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-2 text-blue-600 mb-2">
+                                <i data-lucide="smile" class="w-5 h-5"></i>
+                                <span class="font-bold text-sm" data-es="Dental y Visión" data-en="Dental & Vision">Dental y Visión</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2" data-es="Seguro Dental y Óptico" data-en="Dental & Vision Insurance">Seguro Dental y Óptico</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4" data-es="Cuida tu salud bucal y visual con acceso a los mejores profesionales de la nación." data-en="Keep your smile and vision healthy with top dentists and optometrists nationwide.">
+                                Cuida tu salud bucal y visual con acceso a los mejores profesionales de la nación.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ACA / Obamacare -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80" alt="Doctores analizando caso" class="h-48 w-full object-cover">
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-2 text-blue-600 mb-2">
+                                <i data-lucide="user-check" class="w-5 h-5"></i>
+                                <span class="font-bold text-sm">ACA / Marketplace</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2" data-es="Seguro Individual / ACA" data-en="Individual & Family Insurance">Seguro Individual / ACA</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4" data-es="Accede a subsidios del gobierno para calificar por seguros de bajo o sin costo ($0/mes)." data-en="Access government subsidies to qualify for low or $0/month premium health coverage.">
+                                Accede a subsidios del gobierno para calificar por seguros de bajo o sin costo ($0/mes).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario de Cotización -->
+    <section id="contacto" class="py-20 bg-blue-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
             <div>
-                <div class="flex items-center justify-between mb-4">
-                    <h3 class="text-sm font-semibold text-slate-200 uppercase tracking-wider">Dedicated to Local Care Support</h3>
-                    <span class="text-slate-500 text-xs hidden sm:inline">Professional Care Consultants</span>
-                </div>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div class="relative group overflow-hidden rounded-xl border border-slate-800 bg-slate-800/50">
-                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80" 
-                             alt="Healthcare professional consulting patient" 
-                             class="h-36 w-full object-cover transition duration-300 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-2.5">
-                            <span class="text-white text-[11px] font-medium">Personalized Care</span>
-                        </div>
-                    </div>
-                    
-                    <div class="relative group overflow-hidden rounded-xl border border-slate-800 bg-slate-800/50">
-                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80" 
-                             alt="Medical team reviewing health plans" 
-                             class="h-36 w-full object-cover transition duration-300 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-2.5">
-                            <span class="text-white text-[11px] font-medium">Network Coverage</span>
-                        </div>
-                    </div>
-
-                    <div class="relative group overflow-hidden rounded-xl border border-slate-800 bg-slate-800/50">
-                        <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=600&q=80" 
-                             alt="Doctor giving advice to family" 
-                             class="h-36 w-full object-cover transition duration-300 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-2.5">
-                            <span class="text-white text-[11px] font-medium">Family Protection</span>
-                        </div>
-                    </div>
-
-                    <div class="relative group overflow-hidden rounded-xl border border-slate-800 bg-slate-800/50">
-                        <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=600&q=80" 
-                             alt="Healthcare specialist smiling" 
-                             class="h-36 w-full object-cover transition duration-300 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-2.5">
-                            <span class="text-white text-[11px] font-medium">Local Specialists</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Footer Details & Disclaimers -->
-            <div class="space-y-4 pt-6 border-t border-slate-800">
-                <div class="flex items-center gap-2 text-white font-bold text-base">
-                    <i data-lucide="compass" class="text-blue-500 w-5 h-5"></i>
-                    HealthConsult
-                </div>
-                <p>
-                    <strong>Legal Disclaimer:</strong> HealthConsult is an independent consulting agency. We are not a medical facility, clinic, hospital, or healthcare provider, and our staff do not provide medical advice, diagnosis, or treatment. For medical emergencies, please immediately call 911 or contact your local emergency services. We assist clients in navigating third-party health insurance plan selection and provider directory search services.
-                </p>
-                <p class="pt-4 border-t border-slate-800 text-slate-500">
-                    &copy; 2026 HealthConsult. All rights reserved.
+                <span class="text-blue-300 font-bold text-sm tracking-widest uppercase" data-es="Consulta Gratuita" data-en="Free Consultation">Consulta Gratuita</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 mb-6" data-es="Solicita una asesoría sin compromiso" data-en="Get Your Free Plan Assessment">Solicita una asesoría sin compromiso</h2>
+                <p class="text-blue-100 leading-relaxed mb-8" data-es="Déjanos tus datos y un especialista evaluará las mejores pólizas disponibles en tu estado." data-en="Leave your details and a licensed agent will evaluate the best available policies in your state.">
+                    Déjanos tus datos y un especialista evaluará las mejores pólizas disponibles en tu estado.
                 </p>
             </div>
 
+            <div class="bg-white text-slate-900 p-8 rounded-2xl shadow-2xl">
+                <h3 class="text-2xl font-bold mb-6 text-center" data-es="Encuentra tu Plan Ahora" data-en="Find Your Plan Now">Encuentra tu Plan Ahora</h3>
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-600 uppercase mb-1" data-es="Nombre Completo" data-en="Full Name">Nombre Completo</label>
+                        <input type="text" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600">
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 uppercase mb-1" data-es="Teléfono" data-en="Phone">Teléfono</label>
+                            <input type="tel" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 uppercase mb-1" data-es="Código Postal" data-en="Zip Code">Código Postal</label>
+                            <input type="text" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600">
+                        </div>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-lg transition mt-4" data-es="Recibir Cotización Gratuita" data-en="Get Free Quote">
+                        Recibir Cotización Gratuita
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Legal Disclaimer -->
+    <footer class="bg-slate-900 text-slate-400 py-10 text-xs leading-relaxed">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+            <p data-es="AVISO LEGAL: HealthConsult es una agencia consultora independiente. No somos una instalación médica ni brindamos asesoramiento o tratamientos médicos. En caso de una emergencia de salud, comuníquese al 911." data-en="DISCLAIMER: HealthConsult is an independent consulting agency. We are not a medical facility and do not provide medical treatment or advice. In case of emergency, call 911 immediately.">
+                AVISO LEGAL: HealthConsult es una agencia consultora independiente. No somos una instalación médica ni brindamos asesoramiento o tratamientos médicos. En caso de una emergencia de salud, comuníquese al 911.
+            </p>
+            <p class="pt-4 border-t border-slate-800 text-slate-500">
+                &copy; 2026 HealthConsult. All rights reserved.
+            </p>
         </div>
     </footer>
+
+    <!-- Script para cambiar Idiomas -->
+    <script>
+        lucide.createIcons();
+
+        function switchLanguage(lang) {
+            const elements = document.querySelectorAll('[data-es][data-en]');
+            elements.forEach(el => {
+                el.textContent = el.getAttribute(`data-${lang}`);
+            });
+
+            const btnEs = document.getElementById('btn-es');
+            const btnEn = document.getElementById('btn-en');
+
+            if (lang === 'es') {
+                btnEs.className = "px-2.5 py-1 rounded-md bg-white text-blue-600 shadow-sm transition";
+                btnEn.className = "px-2.5 py-1 rounded-md text-slate-500 hover:text-slate-900 transition";
+                document.documentElement.lang = 'es';
+            } else {
+                btnEn.className = "px-2.5 py-1 rounded-md bg-white text-blue-600 shadow-sm transition";
+                btnEs.className = "px-2.5 py-1 rounded-md text-slate-500 hover:text-slate-900 transition";
+                document.documentElement.lang = 'en';
+            }
+        }
+    </script>
+</body>
+</html>
